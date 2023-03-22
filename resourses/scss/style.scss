@@ -1,13 +1,9 @@
-// Подключение шрифта
 @import url(https://fonts.googleapis.com/css?family=Manrope:200,regular,700);
 
-// Задаем шрифт по умолчанию через переменную для nullstyle
 $fontfamily: "Manrope", sans-serif;
 
-// Подключение файла обнуляющих стилей
 @import "_nullstyle";
 
-// Задаем функцию для динамических шрифта и отступов
 @function calcSize($f-min, $f-max, $w-min, $w-max) {
 	$k: ($f-max - $f-min)/($w-max - $w-min);
 	$b: $f-min - $k * $w-min;
@@ -17,36 +13,24 @@ $fontfamily: "Manrope", sans-serif;
 	@return calc(#{$k} * 100vw + #{$b});
 }
 
-// ОБЩИЕ ПАРАМЕТРЫ===================================
-
-// Оболочка
 body {
 	width: 100%;
-	background-color: #f5f5f5;
-}
-
-.wraper{
-	overflow: hidden;
-	margin: 0 auto;
-	min-height: 100%;
-	//max-width: 1404px;
-	//padding: 0px 2px;
+	//overflow: hidden;
 	color: #121212;
 	background-color: #FFFFFF;
 }
 
-// Основная сетка - контейнер
 .container{
 	max-width: 1180px;
 	padding: 0px 15px;
 	margin: 0 auto;
 }
 
-// Стили на всей странице
-
 img {
-	height: auto;
-	max-width: 100%;
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
+	object-position: center;
 }
 
 a,
@@ -56,7 +40,8 @@ h2,
 h3,
 img,
 div,
-span {
+span,
+p {
 	letter-spacing: -0.03em;
 }
 
@@ -76,11 +61,6 @@ span {
 		max-width: 1180px;
 		margin: 0 auto;
 		padding: 33px 15px;
-
-		@media (max-width: 1000px) {
-			padding-top: calcSize(10, 33, 320, 1000);
-			padding-bottom: calcSize(10, 33, 320, 1000);
-		}
 	}
 
 	&__logo {
@@ -100,10 +80,6 @@ span {
 		flex-wrap: wrap;
 		gap: 10px 60.6px;
 		padding-left: 70px;
-
-		@media (max-width: 400px) {
-			padding-right: 15px;
-		}
 	}
 
 	&__list-item {
@@ -156,19 +132,11 @@ span {
 		color: #FFFFFF;
 		opacity: 0.5;
 
-		@media (max-width: 1000px) {
-			font-size: calcSize(15, 20, 320, 1000);
-			line-height: 1.1em;
-		}
 	}
 }
 
 .menu-f {
 	padding-right: 11px;
-
-	@media (max-width: 1000px) {
-		padding-right: 0px;
-	}
 
 	&__list {
 		padding-top: 60px;
@@ -178,11 +146,6 @@ span {
 		justify-content: center;
 		align-items: center;
 		gap: 10px 55.5px;
-
-		@media (max-width: 1000px) {
-			gap: 10px calcSize(16, 55.5, 320, 1000);
-			margin-bottom: calcSize(60, 87, 320, 1000);
-		}
 	}
 
 	&__list-item {
@@ -195,11 +158,6 @@ span {
 		&:hover {
 			opacity: 0.5;
 			transition: all 100ms linear;
-		}
-
-		@media (max-width: 1000px) {
-			font-size: calcSize(16, 18, 320, 1000);
-			line-height: 1.2em;
 		}
 	}
 
@@ -217,12 +175,6 @@ span {
 		font-size: 60px;
 		line-height: 60px;
 		
-		@media (max-width: 1000px) {
-			padding-top: calcSize(30, 128, 320, 1000);
-			font-size: calcSize(28, 60, 320, 1000);
-			line-height: 1em;
-		}
-
 		@media (max-width: 704px) {
 			padding-top: 100px;
 		}
@@ -248,13 +200,6 @@ span {
 		font-size: 20px;
 		line-height: 27px;
 		color: #FFFFFF;
-
-		@media (max-width: 1000px) {
-			bottom: calcSize(10, 40, 320, 1000);
-			left: calcSize(10, 40, 320, 1000);
-			font-size: calcSize(16, 20, 320, 1000);
-			line-height: 1em;
-		}
 	}
 }
 
@@ -264,10 +209,6 @@ span {
 	font-size: 18px;
 	line-height: 25px;
 	text-transform: uppercase;
-
-	@media (max-width: 1000px) {
-		padding-top: calcSize(70, 150, 320, 1000);
-	}
 }
 
 .about {
@@ -282,10 +223,6 @@ span {
 		font-size: 45px;
 		line-height: 61px;
 		
-		@media (max-width: 1000px) {
-			font-size: calcSize(20, 45, 320, 1000);
-			line-height: 1.2em;
-		}
 		& span {
 			letter-spacing: -0.035em;
 		}
@@ -336,22 +273,11 @@ span {
 			color: #FFFFFF;
 			transition: all 100ms linear;
 		}
-
-		@media (max-width: 1000px) {
-			margin-bottom: calcSize(50, 150, 320, 1000);
-			padding: calcSize(28, 58, 320, 1000) 0;
-			font-size: calcSize(18, 30, 320, 1000);
-			line-height: 1.2em;
-		}
 	}
 }
 
 .project {
 	margin-bottom: 90px;
-
-	@media (max-width: 1000px) {
-		margin-bottom: calcSize(30, 90, 320, 1000);
-	}
 
 	&__image {
 		margin-bottom: 15px;
@@ -361,22 +287,12 @@ span {
 		margin-bottom: 15px;
 		font-size: 30px;
 		line-height: 41px;
-
-		@media (max-width: 1000px) {
-			font-size: calcSize(18, 30, 320, 1000);
-			line-height: 1.2em;
-		}
 	}
 
 	&__link {
 		font-size: 20px;
 		line-height: 27px;
 		color: #AD1818;
-		
-		@media (max-width: 1000px) {
-			font-size: calcSize(16, 20, 320, 1000);
-			line-height: 1.1em;
-		}
 	}
 
 	&__link-bias {
@@ -385,53 +301,99 @@ span {
 }
 
 .services {
+	padding-bottom: 150px;
 	background-color: #121212;
 	color: #FFFFFF;
 
 	&__title {
-		margin-bottom: 34px;
+		margin-bottom: 30px;
 		padding-top: 151px;
 		padding-left: 3px;
-		
-		@media (max-width: 1000px) {
-			padding-top: calcSize(70, 151, 320, 1000);
-		}
 	}
 
-	&__card{}
+	&__card {
+		display: grid;
+		grid-template: repeat(2, 1fr) / repeat(2, 1fr);
+		gap: 44px 11px;
+		margin-bottom: 57px;	
+	}
+
+	&__btn {
+		display: block;
+		width: 100%;
+		height: 153px;
+		margin: auto 0;
+		background: #AD1818;
+		border-radius: 5px;
+		text-align: center;
+		font-size: 30px;
+		line-height: 41px;
+		color: #FFFFFF;
+		letter-spacing: -0.032em; //pp
+	}
 }
 
 .service {
-	margin-bottom: 60px;
-
-	@media (max-width: 1000px) {
-		margin-bottom: calcSize(20, 60, 320, 1000);
+	
+	&__image {
+		position: relative;
+		margin-bottom: 25px;
+		height: 389px;
 	}
 
-	&__image {
-		margin-bottom: 15px;
+	&__price {
+		position: absolute;
+		top: 32px;
+		left: 30px;
+		padding: 0 21px;
+		background: #AD1818;
+		border-radius: 5px;
+		font-size: 22px;
+		line-height: 40px;
 	}
 
 	&__info {
 		padding-left: 4px;
+		max-width: 250px;
 		font-size: 30px;
 		line-height: 41px;
-				
-		@media (max-width: 1000px) {
-			font-size: calcSize(17, 30, 320, 1000);
-			line-height: 1.2em;
-		}		
 	}
 
-	&:last-child {
-		margin-bottom: 0px;
-		padding-bottom: 150px;
-
-		@media (max-width: 1000px) {
-			padding-bottom: calcSize(50, 150, 320, 1000);
-		}
+	&:nth-child(3) .service__image,
+	&:nth-child(4) .service__image{
+		margin-bottom: 17px;
 	}
+
 }
+
+.reviews {
+
+		&__title {}
+
+		&__card {
+			display: grid;
+		}
+}
+
+.review {
+
+		&__title {
+			font-size: 45px;
+			line-height: 61px;
+		}
+
+		&__description {
+			margin-bottom: 50px;
+			font-size: 22px;
+			line-height: 30px;
+		}
+
+		&__conclusion {
+			font-size: 22px;
+			line-height: 30px;
+		}
+}
+
 
 .example {
 
@@ -464,12 +426,6 @@ span {
 			left: 15px;
 		}
 
-		@media (max-width: 1000px) {
-			bottom: calcSize(10, 60, 320, 1000);
-			font-size: calcSize(18, 30, 320, 1000);
-			line-height: 1.2em;
-		}
-
 		& span {
 			padding-left: 5px;
 		}
@@ -485,10 +441,6 @@ span {
 		font-size: 18px;
 		line-height: 25px;
 		text-transform: uppercase;
-
-		@media (max-width: 1000px) {
-			padding-top: calcSize(70, 186, 320, 1000);
-		}
 
 		&::before{
 			content: '';
@@ -512,11 +464,6 @@ span {
 			padding-left: 10px;
 			letter-spacing: -0.025em;
 		}
-
-		@media (max-width: 1000px) {
-			font-size: calcSize(32, 60, 320, 1000);
-			line-height: 1em;
-		}
 	}
 
 	&__mail {
@@ -530,12 +477,6 @@ span {
 			padding-bottom: 8px;
 			border-bottom: 2px solid #121212;
 			color: inherit;
-		}
-		
-		@media (max-width: 1000px) {
-			margin-bottom: calcSize(50, 160, 320, 1000);
-			font-size: calcSize(32, 60, 320, 1000);
-			line-height: 1em;
 		}
 	}
 }
