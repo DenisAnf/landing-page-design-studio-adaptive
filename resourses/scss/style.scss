@@ -15,15 +15,18 @@ $fontfamily: "Manrope", sans-serif;
 
 body {
 	width: 100%;
-	//overflow: hidden;
 	color: #121212;
 	background-color: #FFFFFF;
 }
 
 .container{
 	max-width: 1180px;
-	padding: 0px 15px;
+	padding: 0 15px;
 	margin: 0 auto;
+
+	@media (max-width: 767px) {
+		padding: 0 calcSize(12, 15, 375, 767);
+	}
 }
 
 img {
@@ -61,16 +64,63 @@ p {
 		max-width: 1180px;
 		margin: 0 auto;
 		padding: 33px 15px;
+
+		@media (max-width: 1200px) {
+			align-items: flex-start;
+		}
+
+		@media (max-width: 767px) {
+			align-items: center;
+			padding: calcSize(31, 33, 375, 767) calcSize(12, 15, 375, 767);
+		}
 	}
 
 	&__logo {
 		transform: translate(-1px, -2.8px);
 		& img {
 			min-width: 128px;
+
+			@media (max-width: 767px) {
+					min-width: calcSize(96, 128, 375, 767);
+				}
 		}
 	}
 		
 	&__menu {}
+
+	&__hb {
+		display: none;
+
+		@media (max-width: 1200px) {
+			display: block;
+			position: relative;
+			width: 50px;
+			height: 10px;
+
+			&:after,
+			&:before {
+				content: '';
+				position: absolute;
+				right: 0;
+				z-index: 3;
+				height: 2px;
+				background-color: #000000;
+			}
+
+			
+			&:before {
+				width: 100%;
+				top: 0;
+			}
+
+			&:after{
+				width: 31px;
+				bottom: 0;
+			}
+		}
+
+		
+	}
 }
 
 .menu {
@@ -112,6 +162,11 @@ p {
 				width: 100%;
 			}
 		}
+		
+	}
+
+	@media (max-width: 1200px) {
+		display: none;
 		
 	}
 
@@ -367,35 +422,57 @@ p {
 }
 
 .reviews {
+	margin-bottom: 156px;
+	
+	&__title {
+		margin-bottom: 31px; //pp
+	}
 
-		&__title {}
-
-		&__card {
-			display: grid;
-		}
+	&__card {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 80px 54px;
+	}
 }
 
 .review {
+	flex: 0 1 calc(50% - 50px);
 
-		&__title {
-			font-size: 45px;
-			line-height: 61px;
-		}
+	&:last-child { //pp
+		flex: 0 1 861px;
+	}
 
-		&__description {
-			margin-bottom: 50px;
-			font-size: 22px;
-			line-height: 30px;
-		}
+	&:nth-child(2) { //pp
+		flex: 0 1 505px;
+	}
 
-		&__conclusion {
-			font-size: 22px;
-			line-height: 30px;
-		}
+	&__title {
+		display: block;
+		margin-bottom: 14px;
+		margin-left: -2px; //pp
+		font-style: normal;
+		font-size: 45px;
+		line-height: 61px;
+		letter-spacing: -0.032em; //pp
+	}
+
+	&__description {
+		margin-bottom: 30px;
+		font-size: 22px;
+		line-height: 30px;
+		letter-spacing: -0.031em; //pp
+	}
+
+	&__conclusion {
+		font-size: 22px;
+		line-height: 30px;
+		text-indent: 2px; //pp
+	}
 }
 
 
 .example {
+	margin-bottom: 150px;
 
 	&__image {
 		position: relative;
@@ -409,18 +486,32 @@ p {
 		}
 	}
 	
+	&__title {
+		position: absolute;
+		top: 60px;
+		left: calc((100vw - 1165px) / 2 - 1px);
+		font-size: 22px;
+		line-height: 30px;
+		color: #FFFFFF;
+		text-transform: uppercase;
+
+		@media (max-width: 1180px) {
+			left: 15px;
+		}
+
+		& span {
+			padding-left: 5px;
+		}
+	}
+
 	&__info {
 		width: min(443px, 80%);
 		position: absolute;
 		bottom: 60px;
-		left: 125px;
+		left: calc((100vw - 1165px) / 2);
 		font-size: 30px;
 		line-height: 41px;
 		color: #FFFFFF;
-
-		@media (max-width: 1404px) {
-			left: calcSize(15, 125, 1180, 1404);
-		}
 
 		@media (max-width: 1180px) {
 			left: 15px;
@@ -433,30 +524,22 @@ p {
 }
 
 .contacts {
+	margin-bottom: 140px;
 	
 	&__title {
-		position: relative;
-		margin-bottom: 32px;
-		padding-top: 186px;
+		margin-bottom: 74px;
 		font-size: 18px;
 		line-height: 25px;
 		text-transform: uppercase;
-
-		&::before{
-			content: '';
-			position: absolute;
-			display: block;
-			left: -5px;
-			bottom: calc(25px + 12px);
-			width: 24px;
-			height: 24px;
-			background: url('../resourses/img/phone.svg') center center/auto 22px no-repeat;
-			//border: 1px solid red;
-		}
 	}
+}
+
+.contact {
+	display: flex;
+	gap: 20px 105.5px;
 
 	&__number {
-		margin-bottom: 30px;
+		position: relative;
 		font-size: 60px;
 		line-height: 60px;
 
@@ -464,19 +547,42 @@ p {
 			padding-left: 10px;
 			letter-spacing: -0.025em;
 		}
+
+		&::before {
+			content: '';
+			position: absolute;
+			display: block;
+			left: -6px;
+			bottom: 96px;
+			width: 24px;
+			height: 24px;
+			background: url('../resourses/img/phone.svg') center center/auto 22px no-repeat;
+		}
 	}
 
 	&__mail {
-		margin-bottom: 150px;
+		position: relative;
+		transform: translateY(-10px); //pp
 		font-size: 60px;
 		line-height: 60px;
-		opacity: 0.5;
 				
 		& a {
 			display: inline-block;
 			padding-bottom: 8px;
 			border-bottom: 2px solid #121212;
 			color: inherit;
+			opacity: 0.5;
+		}
+
+		&::before {
+			content: '';
+			position: absolute;
+			display: block;
+			left: 0;
+			bottom: 85px;
+			width: 24px;
+			height: 24px;
+			background: url('../resourses/img/mail.svg') center center/auto 16px no-repeat;
 		}
 	}
 }
