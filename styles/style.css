@@ -629,7 +629,7 @@ p {
     padding-left: 0;
     max-width: 100%;
     font-size: calc(0.0208333333 * 100vw + 5px);
-    line-height: 34, 41, 960, 1200;
+    line-height: calc(0.0291666667 * 100vw + 6px);
   }
 }
 @media (max-width: 959px) {

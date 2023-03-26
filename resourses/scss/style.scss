@@ -594,7 +594,7 @@ p {
 			padding-left: 0; //pp
 			max-width: 100%;
 			font-size: calcSize(25, 30, 960, 1200);
-			line-height: (34, 41, 960, 1200);
+			line-height: calcSize(34, 41, 960, 1200);
 		}
 	
 		@media (max-width: 959px) {
