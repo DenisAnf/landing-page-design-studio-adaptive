@@ -545,18 +545,15 @@ p {
 		}
 	}
 
-	&:nth-child(3) .service__image,
-	&:nth-child(4) .service__image {
+	&__image-l {
 		margin-bottom: 17px;
 
 		@media (max-width: 1199px) {
 			margin-bottom: calcSize(15, 17, 960, 1200);
-			height: calcSize(315, 389, 960, 1200);
 		}
 	
 		@media (max-width: 959px) {
 			margin-bottom: calcSize(10, 15, 375, 960);
-			height: calcSize(240, 315, 375, 960);
 		}
 	}
 
@@ -606,7 +603,15 @@ p {
 
 .reviews {
 	margin-bottom: 156px;
-	
+
+	@media (max-width: 1199px) {
+		margin-bottom: calcSize(120, 156, 960, 1200);
+	}
+
+	@media (max-width: 959px) {
+		margin-bottom: calcSize(80, 120, 375, 960);
+	}
+
 	&__title {
 		margin-bottom: 31px; //pp
 	}
@@ -614,19 +619,15 @@ p {
 	&__card {
 		display: flex;
 		flex-wrap: wrap;
-		gap: 80px 54px;
+		gap: 80px 54px; //pp 51
 	}
 }
 
 .review {
-	flex: 0 1 calc(50% - 50px);
+	flex: 0 1 calc(50% - 51px);
 
 	&:last-child { //pp
 		flex: 0 1 861px;
-	}
-
-	&:nth-child(2) { //pp
-		flex: 0 1 505px;
 	}
 
 	&__title {

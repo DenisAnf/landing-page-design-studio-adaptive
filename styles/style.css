@@ -578,19 +578,17 @@ p {
     height: calc(0.1282051282 * 100vw + 191.9230769231px);
   }
 }
-.service:nth-child(3) .service__image, .service:nth-child(4) .service__image {
+.service__image-l {
   margin-bottom: 17px;
 }
 @media (max-width: 1199px) {
-  .service:nth-child(3) .service__image, .service:nth-child(4) .service__image {
+  .service__image-l {
     margin-bottom: calc(0.0083333333 * 100vw + 7px);
-    height: calc(0.3083333333 * 100vw + 19px);
   }
 }
 @media (max-width: 959px) {
-  .service:nth-child(3) .service__image, .service:nth-child(4) .service__image {
+  .service__image-l {
     margin-bottom: calc(0.0085470085 * 100vw + 6.7948717949px);
-    height: calc(0.1282051282 * 100vw + 191.9230769231px);
   }
 }
 .service__price {
@@ -642,6 +640,16 @@ p {
 .reviews {
   margin-bottom: 156px;
 }
+@media (max-width: 1199px) {
+  .reviews {
+    margin-bottom: calc(0.15 * 100vw + -24px);
+  }
+}
+@media (max-width: 959px) {
+  .reviews {
+    margin-bottom: calc(0.0683760684 * 100vw + 54.358974359px);
+  }
+}
 .reviews__title {
   margin-bottom: 31px;
 }
@@ -652,13 +660,10 @@ p {
 }
 
 .review {
-  flex: 0 1 calc(50% - 50px);
+  flex: 0 1 calc(50% - 51px);
 }
 .review:last-child {
   flex: 0 1 861px;
-}
-.review:nth-child(2) {
-  flex: 0 1 505px;
 }
 .review__title {
   display: block;
