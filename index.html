@@ -12,14 +12,14 @@
 	<meta property="og:site_name" content="Дизайн-студия Метрика">
 	<meta property="og:title" content="Дизайн-студия Метрика">
 	<meta property="og:description" content="Мы команда квалифицированных дизайнеров и архитекторов">
-	<meta property="og:image" content="https://github.com/DenisAnf/landing-page-design-studio/blob/main/resourses/img/logo_seo.jpg?raw=true">
+	<meta property="og:image" content="https://github.com/DenisAnf/landing-page-design-studio/blob/main/resourses/img/logo/logo_seo.jpg?raw=true">
 	<meta property="og:url" content="https://denisanf.github.io/landing-page-design-studio-adaptive">
 		
 	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:site" content="Denis A">
 	<meta name="twitter:title" content="Дизайн-студия Метрика">
 	<meta name="twitter:description" content="Мы команда квалифицированных дизайнеров и архитекторов">
-	<meta name="twitter:image" content="https://github.com/DenisAnf/landing-page-design-studio/blob/main/resourses/img/logo_seo.jpg?raw=true">
+	<meta name="twitter:image" content="https://github.com/DenisAnf/landing-page-design-studio/blob/main/resourses/img/logo/logo_seo.jpg?raw=true">
 
 	<meta name="Author" content="Denis A">
 	<meta name="Copyright" content="Дизайн-студия Метрика">
@@ -27,13 +27,13 @@
 
 	<link rel="stylesheet" href="styles/style.css">
 	<title>Дизайн-студия Метрика</title>
-	<link rel="shortcut icon" href="resourses/img/favicon.ico"/>
+	<link rel="shortcut icon" href="resourses/img/icon/favicon.ico"/>
 </head>
 <body>
 	<header class="header">
 		<div class="header__inner">
 			<div class="header__logo">
-				<a href="#" title="Дизайн-студия Метрика"><img srcset="resourses/img/logo.png, resourses/img/logo@2x.png 2x" src="resourses/img/logo.png" alt="Логотип МЕТРИКА" ></a>
+				<a href="#" title="Дизайн-студия Метрика"><img srcset="resourses/img/logo/logo.png, resourses/img/logo/logo@2x.png 2x" src="resourses/img/logo/logo.png" alt="Логотип МЕТРИКА" ></a>
 			</div>
 			<div class="header__hb"></div>
 			<nav class="header__menu menu">
@@ -48,13 +48,22 @@
 	</header>
 	<main class="page">
 		<div class="container">
-			<section class="start">
-				<h1 class="start__title">
+			<section class="intro">
+				<h1 class="intro__title">
 					Современные и стильные интерьеры для комфортной жизни
 				</h1>
-				<div class="start__image">
-					<img srcset="resourses/img/main.jpg, resourses/img/main@2x.jpg 2x" src="resourses/img/main.jpg" alt="Красивый дизайнерский стул с журналиным столиком в темно-зеленом интерьере">
-					<div class="start__info">
+				<div class="intro__image">
+					<picture>
+						<source 
+							media="(max-width: 500px)" 
+							srcset="resourses/img/intro/intro-phone.jpg, resourses/img/intro/intro-phone@2x.jpg 2x" type="image/jpeg">
+						<source 
+							media="(max-width: 1199px)"
+							srcset="resourses/img/intro/intro-tablet.jpg, resourses/img/intro/intro-tablet@2x.jpg 2x" type="image/jpeg">
+						<img 
+							srcset="resourses/img/intro/intro.jpg, resourses/img/intro/intro@2x.jpg 2x" src="resourses/img/intro/intro.jpg" alt="Красивый дизайнерский стул с журнальным столиком в темно-зеленом интерьере">
+					</picture>
+					<div class="intro__info">
 						Мы - команда квалифицированных дизайнеров и архитекторов, занимающихся разработкой и реализацией дизайн-проектов
 					</div>
 				</div>
@@ -77,8 +86,14 @@
 				<ul class="projects__card">
 					<li class="project">
 						<div class="project__image">
-							<img srcset="resourses/img/project-1.jpg, resourses/img/project-1@2x.jpg 2x" src="resourses/img/project-1.jpg"
-								alt="Красивый бордовый угловой диван на фоне понорамных окон с видом на центр города">
+							<picture>
+								<source media="(max-width: 500px)"
+									srcset="/resourses/img/intro/intro-phone.jpg, resourses/img/intro/intro-phone@2x.jpg 2x" type="image/jpeg">
+								<source media="(max-width: 1199px)"
+									srcset="/resourses/img/intro/intro-tablet.jpg, resourses/img/intro/intro-tablet@2x.jpg 2x" type="image/jpeg">
+								<img srcset="resourses/img/project-1.jpg, resourses/img/project-1@2x.jpg 2x" src="resourses/img/project-1.jpg"
+									alt="Красивый бордовый угловой диван на фоне понорамных окон с видом на центр города">
+							</picture>
 						</div>
 						<h3 class="project__info">
 							ЖК ПРАВОБЕРЕЖНЫЙ — 112 м² — 2023
