@@ -379,7 +379,6 @@ p {
 .about__link {
   display: block;
   width: 255px;
-  height: 67px;
   background-color: #AD1818;
   border-radius: 5px;
   text-align: center;
@@ -393,7 +392,6 @@ p {
 @media (max-width: 959px) {
   .about__link {
     width: calc(0.1042735043 * 100vw + 154.8974358974px);
-    height: calc(0.0273504274 * 100vw + 40.7435897436px);
     border-radius: calc(0.0020512821 * 100vw + 3.0307692308px);
     font-size: calc(0.0068376068 * 100vw + 13.4358974359px);
     line-height: calc(0.0273504274 * 100vw + 40.7435897436px);
@@ -404,7 +402,6 @@ p {
   display: block;
   margin-bottom: 150px;
   width: 100%;
-  height: 153px;
   border: 1px solid #AD1818;
   border-radius: 5px;
   font-size: 30px;
@@ -429,7 +426,6 @@ p {
 @media (max-width: 959px) {
   .projects__all {
     margin-bottom: calc(-0.0700854701 * 100vw + 170.2820512821px);
-    height: calc(0.0905982906 * 100vw + 66.0256410256px);
     border-radius: calc(0.0020512821 * 100vw + 3.0307692308px);
     font-size: calc(0.0136752137 * 100vw + 16.8717948718px);
     line-height: calc(0.0905982906 * 100vw + 66.0256410256px);
@@ -527,12 +523,12 @@ p {
 .services__card {
   display: grid;
   grid-template: repeat(2, 1fr)/repeat(2, 1fr);
-  gap: 44px 11px;
+  gap: 85px 11px;
   margin-bottom: 57px;
 }
 @media (max-width: 1199px) {
   .services__card {
-    gap: calc(-0.1791666667 * 100vw + 259px) calc(0.0041666667 * 100vw + 6px);
+    gap: calc(-0.0083333333 * 100vw + 95px) calc(0.0041666667 * 100vw + 6px);
     margin-bottom: calc(-0.125 * 100vw + 207px);
   }
 }
