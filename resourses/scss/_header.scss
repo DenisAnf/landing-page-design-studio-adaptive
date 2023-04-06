@@ -28,6 +28,10 @@
 	&__logo {
 		transform: translate(-1px, -2.8px); //pp
 
+		@media (max-width: 767px) {
+			transform: translate(0, 0); //pp
+		}
+
 		& img {
 			width: 128px;
 
